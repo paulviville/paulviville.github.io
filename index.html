@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Viville</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
-    </style>
+    <link rel="stylesheet" href="./Reveal/multiCol.css">
+    <link rel="stylesheet" href="./Reveal/reveal.css">
+    <link rel="stylesheet" href="./Reveal/theme/white.css">
+    <link rel="stylesheet" href="./Reveal/highlight/monokai.css">
 </head>
 <body>
-    <h1>Welcome to My Homepage!</h1>
+    
+    <div class="reveal">
+        <div class="slides" id="slides">
+				<section data-external="./Slides/0_title.html" data-visibility="uncounted">
+                    <h1>Welcome to My Homepage!</h1>
+                </section>
+        </div>
+    </div>
+
+    <script type="module">
+        import Reveal from './Reveal/reveal.esm.js'
+        Reveal.initialize({
+            touch: false,
+            slideNumber: 'c/t',
+            transition: 'none',
+            center: true,
+            hideAddressBar: true,
+            // plugins: [RevealNotes, RevealMath, RevealHighlight, RevealMarkdown],
+            dependencies: [{
+                    src: 'Reveal/external/external.js',
+                    condition: function() {
+                        return !!document.querySelector( '[data-external],[data-external-replace]' );
+                    }
+                }],
+            width: 1920,
+            height: 1400
+        })
+    </script>
+
 </body>
 </html>
